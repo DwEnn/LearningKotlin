@@ -16,21 +16,15 @@ Basic Syntax
 2.	함수 정의
 
 	-	함수는 **fun** 키워드로 정의
-	-	함수 몸체가 식(expression)인 경우 return 생략 가능
-	-	**fun** sum(a: Int, b: Int) = a + b // 이런 경우 return type 이 추론 됨
+	-	함수 몸체가 식(expression)인 경우 return 생략 가능(이 경우 return type 이 추론 됨)
 	-	리턴할 값이 없는 경우 Unit(Object)으로 리턴
-	-	**fun** printKotlin(): Unit { println("hello world") }
 	-	Unit은 Java에서 Void 리턴 역할, Unit은 생략 가능
-	-	**fun** printKotlin(): { println("hello world") }
 
 3.	지역 변수 정의
 
 	-	val : 읽기 전용 변수
 	-	값의 할당이 1회만 가능, **Java**의 **final**과 유사
 	-	val a: Int = 1 // 즉시 할당
-	-	val b = 2 // 'Int' type 추론
-	-	val c: Int // 컴파일 오류, 초기화가 필요
-	-	c = 3 // 컴파일 오류, 읽기 전용
 	-	val : Mutable 변수 ( ex : var x = 5 // x += 1 )
 
 4.	주석
@@ -43,28 +37,20 @@ Basic Syntax
 5.	문자열 템플릿
 
 	-	Striong Interpolation (문자열 보간법)
-	-	var a = 1 // simple name in template
-	-	var s1 = "a is $a"
-	-	a = 2 // arbitary expression in template
-	-	val s2 = "${s1.replace("is", was)}, but now is $a"
 
 6.	조건문
 
-	-	fun maxOf(a: Int, b: Int): Int { if(a > b) { return a } else { return b } }
 	-	조건식으로 사용 가능
-	-	fun maxOf(a: Int, b: Int) = if(a > b) a else b
 
 7.	Nullable
 
 	-	값이 null 일 수 있는 경우 타입에 nullable 마크를 명시 해야 함
-	-	fun parseInt(str: String): Int? { // 정수가 아닌 경우 null 을 리턴 }
 	-	nullable 타입의 변수를 접근 할 때는 반드시 null 체크를 해야 함
 	-	그렇지 안으면 컴파일 오류가 발생
 
 8.	자동 타입 변환
 
 	-	타입 체크만 해도 자동으로 타입 변환이 됨
-	-	fun getStringLength(obj: Any):Int? { if(obj is String) { // 'obj' 가 자동으로 String 타입으로 변환 됨 } }
 
 9.	While Loop
 
@@ -73,20 +59,15 @@ Basic Syntax
 10.	When expression
 
 	-	switch case 와 비슷
-	-	fun describe(obj: Any): String = when (obj) { 1 -> "One" "Hello" -> "Greeting" else -> "UnKnown"}
 
 11.	ranges
 
 	-	In 연산자를 이용해서 숫자 법위를 체크 가능
-	-	for (x in 1..5) { print(x) }
-	-	if(x in 1..10) { print("fits in range") }
 
 12.	collections
 
 	-	collection 도 in 으로 loop 가능
-	-	for (item in items) { print(item) }
 	-	in 으로 해당 값이 collection 에 포함되는지 체크 가능
-	-	when { "orange" in items -> print("juicy") "apple" in items -> print("apple is fine too") }
 
 Basic Types
 -----------
@@ -111,4 +92,3 @@ Basic Types
 	-	2진수 : 0b00001011
 	-	8진수 : 미지원 (Java : int I = 017; )
 	-	16진수 : 0X0F
-
