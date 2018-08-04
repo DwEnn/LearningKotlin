@@ -1,6 +1,8 @@
 Learning Kotlin
 ===============
 
+**인프런 강좌와 백준 Java 코드를 Kotlin 으로 코딩하며 학습**
+
 출처 : https://www.inflearn.com/course/%EC%BD%94%ED%8B%80%EB%A6%B0-%EA%B0%95%EC%A2%8C-%EC%83%88%EC%B0%A8%EC%9B%90/
 
 Basic Syntax
@@ -37,4 +39,76 @@ Basic Syntax
 	-	// : 한 줄 주석
 	-	/* */ : 여러 줄 주석 (block comment)
 	-	block comment 가 Java 와 다르게 중첩 허용됨
+
+5.	문자열 템플릿
+
+	-	Striong Interpolation (문자열 보간법)
+	-	var a = 1 // simple name in template
+	-	var s1 = "a is $a"
+	-	a = 2 // arbitary expression in template
+	-	val s2 = "${s1.replace("is", was)}, but now is $a"
+
+6.	조건문
+
+	-	fun maxOf(a: Int, b: Int): Int { if(a > b) { return a } else { return b } }
+	-	조건식으로 사용 가능
+	-	fun maxOf(a: Int, b: Int) = if(a > b) a else b
+
+7.	Nullable
+
+	-	값이 null 일 수 있는 경우 타입에 nullable 마크를 명시 해야 함
+	-	fun parseInt(str: String): Int? { // 정수가 아닌 경우 null 을 리턴 }
+	-	nullable 타입의 변수를 접근 할 때는 반드시 null 체크를 해야 함
+	-	그렇지 안으면 컴파일 오류가 발생
+
+8.	자동 타입 변환
+
+	-	타입 체크만 해도 자동으로 타입 변환이 됨
+	-	fun getStringLength(obj: Any):Int? { if(obj is String) { // 'obj' 가 자동으로 String 타입으로 변환 됨 } }
+
+9.	While Loop
+
+	-	Java 와 같음
+
+10.	When expression
+
+	-	switch case 와 비슷
+	-	fun describe(obj: Any): String = when (obj) { 1 -> "One" "Hello" -> "Greeting" else -> "UnKnown"}
+
+11.	ranges
+
+	-	In 연산자를 이용해서 숫자 법위를 체크 가능
+	-	for (x in 1..5) { print(x) }
+	-	if(x in 1..10) { print("fits in range") }
+
+12.	collections
+
+	-	collection 도 in 으로 loop 가능
+	-	for (item in items) { print(item) }
+	-	in 으로 해당 값이 collection 에 포함되는지 체크 가능
+	-	when { "orange" in items -> print("juicy") "apple" in items -> print("apple is fine too") }
+
+Basic Types
+-----------
+
+1.	기본 타입
+
+	-	Kotlin 에서 모든 것은 객체
+	-	모든 것에 멤버 함수나 프로퍼티를 호출 가능하다는 의미에서 ..
+
+2.	숫자 (Numbers)
+
+	-	Java 의 숫자형과 거의 비슷하게 처리
+	-	Kotlin 에서 Number 는 클래스, Java 의 Primitive Type 에 직접 접근 할 수 없음
+	-	Java 에서 숫자형이던 char 가 Kotlin 에서는 숫자 형이 아님
+
+3.	리터럴 (Literal)
+
+	-	10 진수 : 123 (Int, Short)
+	-	Long : 123L
+	-	Double : 123.5, 123.5e10
+	-	Float : 123.5f
+	-	2진수 : 0b00001011
+	-	8진수 : 미지원 (Java : int I = 017; )
+	-	16진수 : 0X0F
 
