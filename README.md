@@ -23,5 +23,3 @@ Basic Syntax
 -   fun printKotlin(): Unit { println("hello world") }
 -   Unit은 Java에서 Void 리턴 역할, Unit은 생략 가능
 ```
-
-\**3. \*\*
