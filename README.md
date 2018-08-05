@@ -90,5 +90,9 @@ Basic Types
 	-	Double : 123.5, 123.5e10
 	-	Float : 123.5f
 	-	2진수 : 0b00001011
-	-	8진수 : 미지원 (Java : int I = 017; )
+	-	8진수 : 미지원 ( Java : int I = 017; )
 	-	16진수 : 0X0F
+
+4.	Underscores in numberic literals(since 1.1)
+
+5.
