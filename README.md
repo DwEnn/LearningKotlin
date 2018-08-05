@@ -95,4 +95,49 @@ Basic Types
 
 4.	Underscores in numberic literals(since 1.1)
 
-5.
+5.	Representation
+
+	-	Java 플랫폼에서 숫자형은 JVM Primitive Type 으로 저장됨
+	-	Nullable 이나 제네릭의 경우는 Boxing 됨
+	-	Boxing 된 경우 identity 를 유지 하지 않음
+
+6.	Explicit conversions
+
+	-	작은 타입은 큰 타입의 하위 타입이 아님, 즉 작은 타입에서 큰 타입으로의 대입이 안 됨
+
+7.	문자 (Characters)
+
+	-	Char 는 숫자로 취급 되지 않음
+
+8.	배열
+
+	-	배열은 Array 클래스로 표현
+	-	get, set ([] 연산자 오버로딩 됨)
+	-	size 등 유용한 멤버 함수 포함
+
+9.	배열 생성
+
+	-	Array 의 팩토리 함수를 이용
+	-	arrayOf() 등의 라이브러리 함수 이용
+
+10.	특별한 Array 클래스
+
+	-	Primitive 타입의 박싱 오버헤드를 없애기 위한 배열
+	-	IntArray, ShortArray, IntArray
+	-	Array 를 상속한 클래스들은 아니지만, Array 와 같은 메소드와 프로퍼티를 가짐
+	-	size 등 유용한 멤버 함수 포함
+
+11.	문자열
+
+	-	문자열은 String 클래스로 표현
+	-	String 은 Characters 로 구성됨
+	-	s[i] 와 같은 방식으로 접근 가능 (immutable 이므로 변경 불가)
+
+12.	문자열 리터럴
+
+	-	escaped string ("Kotlin")
+		-	전통적인 방식으로 Java String 과 거의 비슷
+		-	Backslash 를 사용하여 escaping 처리
+	-	raw string ("""Kotlin""")
+		-	escaping 처리 필요 없음
+		-	개행 이나 어떠한 문자 포함 가능
