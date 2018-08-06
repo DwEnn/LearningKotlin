@@ -141,3 +141,50 @@ Basic Types
 	-	raw string ("""Kotlin""")
 		-	escaping 처리 필요 없음
 		-	개행 이나 어떠한 문자 포함 가능
+
+Control Flow
+------------
+
+1.	if else 문
+
+	-	Java 와 거의 유사함
+	-	if 문이 식으로 사용되는 경우 값을 반환함
+	-	if 식의 경우 반드시 else 를 동반해야 함
+	-	if 식의 branches 들이 블록을 가질 수 있음
+	-	블록의 마지막 구문이 반환 값이 됨
+	-	삼항연산자(ternary) 가 없음
+		-	if 문이 삼항연산자 역할을 잘 해내기 때문
+
+2.	When
+
+	-	when 문은 C 계열 언어의 switch 문을 대체함
+	-	when 문은 각각의 branches 의 조건문이 만족할 때 까지 위에서 부터 순차적으로 인자를 비교함
+	-	when 문이 식으로 사용된 경우에는 조건을 만족하는 branch 의 값이 전체 식의 결과 값이 됨
+	-	else 의 경우 다른 branch 들의 조건이 만족되지 않을 때 수행 됨
+	-	when 이 식으로 사용된 경우 else 문이 필수
+	-	when 이 식으로 사용된 경우 컴파일러가 else 문이 없어도 된다는 것을 입증할 수 있는 경우에는 else 를 생략 가능
+	-	여러 조건들이 같은 방식으로 처리될 수 있는 경우, branch 의 조건문에 콤마(,) 를 사용하여 표기하면 됨
+	-	branch 의 조건문에 함수나 식을 사용할 수 있음
+	-	range 나 collection 에 in 이나 !in 으로 범위 등을 검사할 수 있음
+	-	is 나 !is 를 이용하여 타입도 검사 할 수 있음
+		-	이 때 스마트 캐스트가 적용됨
+	-	when 은 if-else if 체인을 대체할 수 있음
+	-	when 에 인자를 입력하지 않으면, 논리연산으로 처리됨
+
+3.	for loops
+
+	-	for 문은 iterator 을 제공하는 모든 것을 반복할 수 있음
+	-	for 문의 body 가 블록이 올 수 도 있음
+	-	for 문을 지원하는 iterator 의 조건
+		-	멤버함수나 확장함수 중에
+			-	iterator() 를 반환하는 것이 있는 경우
+				-	next() 를 가지는 경우
+				-	hasNext(): Boolean 를 가지는 경우
+			-	위의 3 함수는 operator 로 표기 되어야 함
+	-	배열이나 리스트를 반복할 때, index를 이용하고 싶다면 indices 를 이용하면 됨
+	-	index 를 이용하고 싶을 때, withIndex() 를 이용할 수도 있음
+
+4.	while loops
+
+	-	while, do-while 문은 Java 와 거의 같음
+	-	do-while 문에서 body 의 지역변수를 do-while 문의 조건문이 참조 할 수 있음
