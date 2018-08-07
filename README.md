@@ -188,3 +188,54 @@ Control Flow
 
 	-	while, do-while 문은 Java 와 거의 같음
 	-	do-while 문에서 body 의 지역변수를 do-while 문의 조건문이 참조 할 수 있음
+
+Packages Return and Jumps
+-------------------------
+
+1.	Package
+
+	-	소스 파일은 패키지 선언으로 시작 됨
+	-	모든 콘텐츠(클래스, 함수, ..) 는 패키지에 포함 됨
+	-	패키지를 명세하지 않으면 이름이 없는 기본 패키지에 포함 됨
+
+2.	기본 패키지
+
+	-	기본으로 import 되는 package 가 있음
+	-	플랫폼 별로 import 되는 package 도 다른 부분도 있음
+		-	kotlin.* / kotlin.annotation.* / kotlin.collections.* / kotlin.comparisons.* ( since 1.1) / kotlin.io.* / kotlin.ranges.* / kotlin.sequences.* / kotlin.text.\*
+		-	JVM : java.lang.* / kotlin.jvm.\*
+		-	JS : kotlin.js.\*
+
+3.	Import
+
+	-	기본으로 포함되는 패키지 외에도, 필요한 package 들을 직접 import 할 수 있음
+	-	foo.Bar / bar.Bar 처럼 이름이 충돌 나는 경우 'as' 키워드로 로컬 리네임 가능 (import bar.Bar as bBar)
+
+4.	3가지 Jump 표현식
+
+	-	return : 함수나 익명 함수에서 반환
+	-	break : 루프를 종료
+	-	continue : 루프의 다음 단계로 직행
+
+5.	label 로 break and continue
+
+	-	label 표현 : label@, abc@, fooBar@
+		-	식별자 + @ 형태로 사용
+	-	label 로 return
+		-	코틀린에서 중첩 될 수 있는 요소들
+			-	함수 리터럴 (function literals)
+			-	지역함수 (local function)
+			-	객체 표현식 (object expression)
+			-	함수 (function)
+		-	람다식에서 return 할 때 주의사항
+			-	람다식에서 return 시 nearest enclosing 함수가 return 됨
+			-	람다식에 대해서만 return 하려면 label 을 이용해야
+		-	암시적 label
+			-	람다식에서만 return 하는 경우 label 을 이용해서 return 해야 함
+			-	직접 label 을 사용하는 것 보다 암시적 label 이 편리
+			-	암시적 label 은 람다가 사용된 함수의 이름과 동일함
+		-	label return 시 값을 반환할 경우
+			-	return@label 1 형태로 사용
+			-	return + @label + 값
+
+6.
