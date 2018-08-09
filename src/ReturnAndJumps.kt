@@ -25,7 +25,7 @@ fun returnTest(a: Int, b: Int): Int {
 
 fun breakTest() {
     for (x in 1..10){
-        if (x > 2){
+        if (x > 2) {
             println("x > 2 break")
             break
         }
