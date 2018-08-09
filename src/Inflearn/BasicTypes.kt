@@ -1,24 +1,26 @@
+package Inflearn
+
 fun main(args: Array<String>) {
 
     // Underscores in numeric literals
-//    numberLiterals()
+//    Inflearn.numberLiterals()
 
     // Representation
-//    representation()
+//    Inflearn.representation()
 
     // Explicit Conversions
-//    explicitConversions()
+//    Inflearn.explicitConversions()
 
     // Characters
-//    charTest('a')
+//    Inflearn.charTest('a')
 
     // Array
-//    arrayTest()
-//    arrayTest1()
+//    Inflearn.arrayTest()
+//    Inflearn.arrayTest1()
 
     // String
-//    strTest()
-//    strTest1()
+//    Inflearn.strTest()
+//    Inflearn.strTest1()
 
 }
 

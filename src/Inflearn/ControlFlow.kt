@@ -1,23 +1,23 @@
-
+package Inflearn
 fun main(args: Array<String>) {
 
     // if else
-//    ifElseTest()
+//    Inflearn.ifElseTest()
 
     // when
-//    whenTest(1)
-//    whenTest(2)
-//    whenTest(3)
-//    whenTest1(80, true)
-//    whenTest2(0, "0")
-//    whenTest2(1, "2")
-//    whenTest3(3)
-//    whenTest4("Learning Kotlin")
-//    println(whenTest4("Learning Kotlin"))
+//    Inflearn.whenTest(1)
+//    Inflearn.whenTest(2)
+//    Inflearn.whenTest(3)
+//    Inflearn.whenTest1(80, true)
+//    Inflearn.whenTest2(0, "0")
+//    Inflearn.whenTest2(1, "2")
+//    Inflearn.whenTest3(3)
+//    Inflearn.whenTest4("Learning Kotlin")
+//    println(Inflearn.whenTest4("Learning Kotlin"))
 
     // for loop
-//    forTest()
-//    forTest1()
+//    Inflearn.forTest()
+//    Inflearn.forTest1()
     forTest2()
 
 }

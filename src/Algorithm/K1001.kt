@@ -1,3 +1,5 @@
+package Algorithm
+
 import java.util.*
 
 fun main(args: Array<String>) {

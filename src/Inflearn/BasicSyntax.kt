@@ -1,48 +1,48 @@
-
+package Inflearn
 fun main(args: Array<String>) {
     // 함수 정의
 //    val a = 20
 //    val b = 30
-//    println(sum(a, b))
-//    println(sum1(a, b))
-//    printHelloWorld()
-//    printHelloWorld1()
+//    println(Inflearn.sum(a, b))
+//    println(Inflearn.sum1(a, b))
+//    Inflearn.printHelloWorld()
+//    Inflearn.printHelloWorld1()
 
     // 문자열 템플릿
-//    interpolation()
+//    Inflearn.interpolation()
 
     // 조건문
 //    val a = 30
 //    val b = 20
-//    println(maxOf(a, b))
-//    println(maxOf1(a, b))
+//    println(Inflearn.maxOf(a, b))
+//    println(Inflearn.maxOf1(a, b))
 
     // Nullable
-//    printProduct("1", "1")
-//    printProduct("1", "2")
+//    Inflearn.printProduct("1", "1")
+//    Inflearn.printProduct("1", "2")
 
     // 자동 타입 변환
-//    println(getStringLength("Learning Kotlin"))
-//    println(getStringLength("Learning Kotlin" + 102))
-//    println(getStringLength(3321))
+//    println(Inflearn.getStringLength("Learning Kotlin"))
+//    println(Inflearn.getStringLength("Learning Kotlin" + 102))
+//    println(Inflearn.getStringLength(3321))
 
     // while loop
-//    whileLoop()
+//    Inflearn.whileLoop()
 
     // when expression
-//    println(describe(1))
-//    println(describe("Hello"))
-//    println(describe(3124L))
-//    println(describe(1.302))
-//    println(describe(null))
+//    println(Inflearn.describe(1))
+//    println(Inflearn.describe("Hello"))
+//    println(Inflearn.describe(3124L))
+//    println(Inflearn.describe(1.302))
+//    println(Inflearn.describe(null))
 
-    // ranges
-//    ranges()
+    // Inflearn.ranges
+//    Inflearn.ranges()
 
-    // collections
-//    collections()
+    // Inflearn.collections
+//    Inflearn.collections()
 //    println()
-//    collections1()
+//    Inflearn.collections1()
 
 }
 
@@ -162,7 +162,7 @@ fun describe(obj : Any?) : String =
         }
 
 /*
-    ranges
+    Inflearn.ranges
  */
 
 fun ranges() {
@@ -175,7 +175,7 @@ fun ranges() {
 }
 
 /*
-    collections
+    Inflearn.collections
  */
 
 fun collections() {

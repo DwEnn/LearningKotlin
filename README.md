@@ -60,11 +60,11 @@ Basic Syntax
 
 	-	switch case 와 비슷
 
-11.	ranges
+11.	Inflearn.ranges
 
 	-	In 연산자를 이용해서 숫자 법위를 체크 가능
 
-12.	collections
+12.	Inflearn.collections
 
 	-	collection 도 in 으로 loop 가능
 	-	in 으로 해당 값이 collection 에 포함되는지 체크 가능
@@ -202,7 +202,7 @@ Packages Return and Jumps
 
 	-	기본으로 import 되는 package 가 있음
 	-	플랫폼 별로 import 되는 package 도 다른 부분도 있음
-		-	kotlin.* / kotlin.annotation.* / kotlin.collections.* / kotlin.comparisons.* ( since 1.1) / kotlin.io.* / kotlin.ranges.* / kotlin.sequences.* / kotlin.text.\*
+		-	kotlin.* / kotlin.annotation.* / kotlin.Inflearn.collections.* / kotlin.comparisons.* ( since 1.1) / kotlin.io.* / kotlin.Inflearn.ranges.* / kotlin.sequences.* / kotlin.text.\*
 		-	JVM : java.lang.* / kotlin.jvm.\*
 		-	JS : kotlin.js.\*
 
@@ -238,4 +238,7 @@ Packages Return and Jumps
 			-	return@label 1 형태로 사용
 			-	return + @label + 값
 
-6.
+Classes and Inheritance
+-----------------------
+
+1.

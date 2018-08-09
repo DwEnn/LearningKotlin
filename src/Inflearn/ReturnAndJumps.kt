@@ -1,15 +1,17 @@
+package Inflearn
+
 fun main(args: Array<String>) {
 
     // Return and Jumps
-//    returnTest(10, 20)
-//    breakTest()
-//    continueTest()
+//    Inflearn.returnTest(10, 20)
+//    Inflearn.breakTest()
+//    Inflearn.continueTest()
 
     // label
-//    labelTest()
-//    labelTest1()
-//    labelTest2()
-//    labelTest3()
+//    Inflearn.labelTest()
+//    Inflearn.labelTest1()
+//    Inflearn.labelTest2()
+//    Inflearn.labelTest3()
     labelTest4()
 
 }
