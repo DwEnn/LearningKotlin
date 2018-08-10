@@ -2,7 +2,6 @@ package BSISCodeFestival
 
 import java.util.*
 import kotlin.collections.ArrayList
-import kotlin.collections.HashMap
 
 fun main(args: Array<String>) {
     val sc = Scanner(System.`in`)
@@ -13,13 +12,31 @@ fun main(args: Array<String>) {
         arr[i] = sc.nextInt()
     }
 
-    val ar = HashMap<Int, String>()
-
-    for(i in arr)
-        print("$i ")
-
+    println(getNum(arr))
 }
 
-//fun getNum(n: Int): Int {
+fun getNum(arr: Array<Int?>): Int? {
+    val array = arrayOfNulls<Int>(arr.size)
+    for (i in arr.indices) {
+        val comp = ArrayList<Int>()
+        comp.add(arr[i]!!)
+        var count = 0
+        for (j in i..(arr.size-1)) {
+            if (arr[j] == comp[count].plus(1)) {
+//                comp[++count] = arr[j]!!
+                comp.add(arr[j]!!)
+                count++
+            }
+        }
+
+//        for (k in comp)
+//            print("$k ")
 //
-//}
+//        println()
+        array[i] = comp.size
+    }
+
+    array.sort()
+
+    return array[array.size-1]
+}
