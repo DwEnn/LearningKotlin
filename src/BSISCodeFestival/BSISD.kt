@@ -5,19 +5,16 @@ import java.util.*
 fun main(args: Array<String>) {
     val sc = Scanner(System.`in`)
 
-    val k = sc.nextLong()
-    if (1 > k || k > 40000)
-        throw Exception()
-    println(getNum(k))
+    println(getNum(sc.nextInt()))
 
 }
 
-fun getNum(num: Long): Long {
-    var count: Long = 0
-    var i: Long = 1
+fun getNum(num: Int): Int {
+    var count = 0
+    var i = 1
     while (true) {
         for (j in 2..i) {
-            if (i % j == 0L) {
+            if (i % j == 0) {
                 if (i == j) {
                     count++
                 }
