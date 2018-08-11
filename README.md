@@ -294,4 +294,53 @@ Classes and Inheritance
 		-	Nested and Inner Classes
 		-	Object Declarations
 
-##
+7.	상속
+
+	-	Kotlin 의 최상위 클래스는 Any
+	-	클래스에 상위 타입을 선언하지 않으면 Any 가 상속됨
+		-	<b>class</b> Example1 // 암시적 Any 상속
+		-	<b>class</b> Example2: Any() // 명시적 Any 상속
+	-	Any 는 java.lang.Object 와는 다른 클래스
+		-	equals(), hashCode(), toString() 만 있음
+	-	명시적으로 상위타입을 선언하려면, 클래스 헤더의 클론(: ) 뒤에 상위 타입을 선언
+		-	**open class** Base(p: Int)
+		-	**class** Derived(p: Int): Base(p)
+	-	파생 클래스에 기본 생성자가 있으면, 파생클래스의 기본 생성자에서 상위 타입의 생성자를 호출에서 초기화할 수 있음
+	-	파생 클래스에 기본 생성자가 없으면, 각각의 보조 생성자에서 상위 타입을 super 키워드를 이용해서 초기화 해주어야 함 또는 다른 생성자에게 상위 타입을 초기화 할 수 있게 위임 해주어야 함
+	-	open 어노테이션은 Java 의 final 과 반대
+	-	open class 는 다른 클래스가 상속할 수 있음
+	-	기본적으로 Kotlin 의 모든 class 는 final (이유는 Effective Java, Item 17 : Design and document for inheritance or else prohibit it.)
+		-	**open class** Base(p: Int)
+		-	**class** Derived(p: Int): Base(p)
+
+8.	메소드 오버라이딩
+
+	-	오버라이딩 될 메소드
+		-	open 어노테이션이 요구됨
+	-	오버라이딩 된 메소드
+		-	override 어노테이션이 요구됨
+
+9.	프로퍼티 오버라이딩
+
+	-	메소드 오버라이딩과 유사한 방식으로 오버라이딩 가능
+
+10.	오버라이딩 규칙
+
+	-	같은 멤버에 대한 중복된 구현을 상속받은 경우, 상속받은 클래스는 해당 멤버를 오버라이딩하고 자체 구현을 제공해야 함
+	-	super + <클래스명> 을 통해서 상위 클래스를 호출 할 수 있음
+
+11.	추상 클래스
+
+	-	abstract 멤버는 구현이 없음
+	-	abstract 클래스나 멤버는 open 이 필요 없음
+
+Properties and Fields
+---------------------
+
+1.	프로퍼티 선언
+
+	-	Kotlin 클래스는 프로퍼티를 가질 수 있음
+		-	var (mutable) / val (read-only)
+	-	프로퍼티 사용은 자바의 필드를 사용하듯이 하면 됨
+
+2.

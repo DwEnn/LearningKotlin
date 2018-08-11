@@ -1,5 +1,7 @@
 package Inflearn
 
+import javax.swing.text.View
+
 fun main(args: Array<String>) {
 
     // Class
@@ -23,6 +25,12 @@ fun main(args: Array<String>) {
     // 보조 생성자
 //    val c1 = Customer1("Kotlin", "Learning")
 //    println(c1.name)
+
+    // Override Rule
+    val c = C()
+    c.a()
+    c.b()
+    c.f()
 
 }
 
@@ -106,4 +114,89 @@ class Customer2 (){
 
 class Customer3 private constructor() {
 
+}
+
+/*
+    Inheritance
+ */
+
+// class AA >> This type is final, so it can't be inherited from  -> open class
+open class AA(x: Int)
+
+//class BB: AA(1)
+//class BB(x: Int): AA(x)
+
+class MyView: AA {
+    constructor() : super(1)
+
+    constructor(ctx: Int) : this()
+
+    constructor(ctx: Int, attrs: Int): super(ctx)
+
+}
+
+/*
+    Method Override
+ */
+
+open class CC {
+    open fun v() {}
+    fun nv() {}
+}
+
+class Derived() : CC() {
+    override fun v() {
+        super.v()
+    }
+}
+
+/*
+    Property Override
+ */
+
+open class Foo {
+//    open val x: Int get() { .. }
+}
+
+class Bar1(): Foo() {
+//    override val x: Int = ...
+}
+
+/*
+    Override Rule
+ */
+
+open class A {
+    open fun f() { println("A") }
+    fun a() { println("a") }
+}
+
+interface B {
+    // interface 에서는 open 없어도 됨
+    fun f() { println("B") }
+    fun b() { println("b") }
+}
+
+class C(): A(), B {
+    override fun f() {
+        println(1)
+        super<A>.f() // call to A.f()
+        println(2)
+        super<B>.f() // call to B.f()
+        println(3)
+    }
+}
+
+/*
+    abstract
+ */
+
+abstract class AbsClass {
+    abstract fun f()
+}
+
+class MyC : AbsClass() {
+    override fun f() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 }
