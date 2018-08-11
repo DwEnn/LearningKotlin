@@ -343,4 +343,77 @@ Properties and Fields
 		-	var (mutable) / val (read-only)
 	-	프로퍼티 사용은 자바의 필드를 사용하듯이 하면 됨
 
-2.
+2.	프로퍼티 문법
+
+	-	전체 문법
+
+		-	**var** <propertyName> \[: <propertyType>] [=<property_initializer>\]
+			-	\[<getter>\]
+			-	\[<setter>\]
+
+	-	옵션 (생략가능)
+
+		-	propertyType
+			-	property_initializer 에서 타입을 추론 가능한 경우 생략가능
+			-	property_initializer
+			-	getter
+			-	setter
+
+	-	var (mutable) 프로퍼티
+
+	-	val (read-only) 프로퍼티
+
+		-	setter 가 없음
+
+	-	Custom accessors (getter, setter)
+
+		-	Custom accessors 는 프로퍼티 선언 내부에, 일반 함수처럼 선언 할 수 있음
+		-	getter
+		-	setter
+			-	관습적으로 setter 의 파라미터의 이름은 value (변경가능)
+
+	-	타입생략
+
+		-	Kotlin 1.1 부터는 getter 를 통해 타입을 추론 할 수 있는 경우, 프로퍼티의 타입을 생략 할 수 있음
+
+3.	프로퍼티
+
+	-	accessor 에 가시성 변경이 필요하거나 accessor 에 어노테이션이 필요한 경우, 기본 accessor 의 수정 없이 body 없는 accessor 를 통해 정의 가능 (body를 작성해 주어도 됨)
+
+4.	Backing Fields
+
+	-	Kotlin 클래스는 field 를 가질 수 없음
+	-	'field' 라는 식별자를 통해 접근할 수 있는 automatic backing field 를 제공
+	-	field 는 프로퍼티의 accessor 에서만 샤용가능
+	-	Backing Fields 생성 조건
+		-	accessor 중 1개라도 기본 구현을 사용하는 경우
+		-	custom accessor 에서 field 식별자를 참조하는 경우
+
+5.	Backing Properties
+
+	-	'implicit backing field' 방식이 맞지 않는 경우에는 'backing property' 를 이용할 수도 있음
+
+6.	Compile-Time Constants
+
+	-	Const modifier 를 이용하면 컴파일 타임 상수를 만들 수 있음
+		-	이런 프로퍼티는 어노테이션에서도 사용 가능
+	-	조건
+		-	Top-Level 이거나, Obejct 의 멤버이거나, String 이나 프리미티브 타입으로 초기화된 경우
+
+7.	Late-Initialized Properties
+
+	-	일반적으로 프로퍼티는 non-null 타입으로 선언됨
+	-	간혹 non-null 타입 프로퍼티를 사용하고 싶지만, 생성자에서 초기화를 해줄 수 없는 경우가 있음
+		-	Dependency injection
+		-	Butter Knife
+		-	Unit test 의 setup 메소드
+	-	객체가 constructor 에서는 할당되지 못하지만 여전히 non-null 타입으로 사용하고 싶은 경우, Lateinit modifier 를 사용가능
+	-	조건
+		-	클래스의 바디에서 선언된 프로퍼티만 가능
+		-	기본 생성자에서 선언된 프로퍼티는 안 됨
+		-	var 프로퍼티만 가능
+		-	custom accessor 이 없어야 함
+		-	non-null 타입이어야 함
+		-	프리미티브 타입이면 안 됨
+	-	lateinit 프로퍼티가 초기화 되기 전에 접근되면, 오류가 발생
+		-	kotlin.UninitializedPropertyAccessException: lateinit property tet has not been initialized
