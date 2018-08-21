@@ -477,3 +477,76 @@ Data Classes
 
 	-	객체 표현식 (Object Expression) 을 이용해서 익명 내부 클래스의 인스턴스를 생성할 수 있음
 	-	Functional Java Interface 인 경우에는 접두어에 인터페이스 이름을 사용해서 람다식으로 표현할 수 도 있음
+
+Object Expressions andDeclarations
+----------------------------------
+
+1.	Object Expressions and Declarations
+
+	-	object 용도
+		-	어떤 class 에서 조금 변경된 객체를 생성 할 때
+		-	새로운 subclass 의 명시적인 선언 없이 객체 생성
+	-	object Expressions
+		-	Java 익명 객체
+	-	object Declarations
+		-	singletone
+	-	Companion Object
+		-	singletone + class method (static)
+	-	static 이 없음
+
+2.	객체 표현식
+
+	-	Java 에서는 익명 내부 클래스를 사용해서 처리했음
+	-	Kotlin 에서는 object expressions 을 이용
+
+3.	객체 표현식 문법
+
+	-	어떤 클래스를 상속 받은 익명 객체를 생성
+
+4.	객체 표현식 상속
+
+	-	슈퍼타입의 생성자가 있는 경우, 반드시 값을 전달 해 주어야함
+	-	슈퍼타입이 여러 개인 경우 ':' 콜론 뒤에, ',' 콤마로 구분해서 명시해주면 됨
+
+5.	객체 표현식 상속 없는 경우
+
+	-	특별히 상속 받을 supertypes 가 없는 경우, 간단하게 작성가능
+
+6.	객체 표현식 제약 사항
+
+	-	익명 객체가 local 이나 private 으로 선언될 때만 type 으로 사용될 수 있음
+	-	익명 객체가 public function 이나 public property 에서 리턴 되는 경우, 익명 객체의 슈퍼타입으로 동작됨, 이런 경우 익명 객체에 추가된 멤버에 접근이 불가능함
+
+7.	객체 표현식 특징
+
+	-	익명 객체의 코드는 enclosing scope 의 변수를 접근 할 수 있음
+	-	Java 와는 다르게 final variables 제약 조건이 없음
+
+8.	객체 선언 용도
+
+	-	매우 유용한 singletone 패턴을 Kotlin 에서는 object declarations 을 이용해서 만들 수 있음
+
+9.	객체 선언 문법
+
+	-	object 키워드 뒤에 항상 이름이 있어야함
+	-	object declaration 은 object expression 이 아님
+	-	그래서 할당 구문의 우측에 사용될 수 없음
+	-	object declaratino 의 객체를 참조하려면, 해당 이름으로 직접 접근하면 됨
+	-	슈퍼타입을 가질 수 있음 (상속가능)
+
+10.	동반자 객체
+
+	-	클래스 내부의 object declaration 은 companion 키워드를 붙일 수 있음
+	-	Companion object 의 멤버는 클래스 이름을 통해서 호출 할 수 있음
+	-	companion obejct 의 이름은 생략 될 수 있음
+	-	이런 경우 [class name].Companion 형태로 개게에 접근 가능
+	-	companion object 의 멤버가 다른 언어의 static 멤버 처럼 보일 수 있지만 아님
+	-	companion object 의 멤버는 실제 객체의 멤버
+	-	슈퍼클래스도 가질 수 있는 클래스의 객체임
+
+11.	Semantic difference between object expressions and declarations
+
+	-	object expressions vs object declaration
+		-	object expressinos 는 즉시 초기화 되고 실행 된다.
+		-	object declarations 는 나중에 초기화 된다. (최초 접근 시)
+		-	companion object 는 클래그사 로드 될 때 초기화 됨, java static initializer 와 매칭됨
