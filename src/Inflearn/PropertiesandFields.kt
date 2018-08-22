@@ -152,6 +152,7 @@ class Address9 {
     fun setUp() {
         subject = this.toString()
     }
+
 }
 
     // 불가능, val 인 경우도 안 됨
