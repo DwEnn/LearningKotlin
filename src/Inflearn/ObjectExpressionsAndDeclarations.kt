@@ -172,4 +172,3 @@ fun exTest6() {
     println(MC3)
     println(4)
 }
-
