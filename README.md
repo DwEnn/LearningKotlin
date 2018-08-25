@@ -496,9 +496,9 @@ Object Expressions andDeclarations
 	-	object Expressions
 		-	Java 익명 객체
 	-	object Declarations
-		-	singletone
+		-	singleton
 	-	Companion Object
-		-	singletone + class method (static)
+		-	singleton + class method (static)
 	-	static 이 없음
 
 2.	객체 표현식
@@ -531,7 +531,7 @@ Object Expressions andDeclarations
 
 8.	객체 선언 용도
 
-	-	매우 유용한 singletone 패턴을 Kotlin 에서는 object declarations 을 이용해서 만들 수 있음
+	-	매우 유용한 singleton 패턴을 Kotlin 에서는 object declarations 을 이용해서 만들 수 있음
 
 9.	객체 선언 문법
 

@@ -1,5 +1,7 @@
 fun main(args: Array<String>) {
-    test()
+
+//    test()
+    test1()
 }
 
 fun test() {
@@ -10,4 +12,18 @@ fun test() {
 
 class LazyTest {
     var lazyTest: String? = null
+}
+
+fun test1() {
+    val str = "str"
+    val str1 = "str1".let { println(it) }
+
+    println(str)
+    println(str1)
+}
+
+data class ClassTest(var name: String?)
+
+fun test2() {
+
 }
