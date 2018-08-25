@@ -1,4 +1,7 @@
 package Inflearn
+
+import com.sun.org.apache.xpath.internal.operations.Bool
+
 fun main(args: Array<String>) {
 
     // if else
@@ -18,7 +21,7 @@ fun main(args: Array<String>) {
     // for loop
 //    Inflearn.forTest()
 //    Inflearn.forTest1()
-    forTest2()
+//    forTest2()
 
 }
 
